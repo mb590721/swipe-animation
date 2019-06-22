@@ -1,0 +1,12 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+app-carousel {
+    width: 360px;
+    height: 650px;
+}
