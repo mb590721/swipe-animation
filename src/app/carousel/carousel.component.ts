@@ -15,4 +15,7 @@ export class CarouselComponent implements OnInit {
   ngOnInit() {
   }
 
+  pan(event) {
+    console.log(event);
+  }
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CarouselItem } from './carousel-item.model';
 
+import 'hammerjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
