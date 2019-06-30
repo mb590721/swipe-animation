@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarouselItem } from './carousel-item.model';
 
 import 'hammerjs';
@@ -8,21 +8,20 @@ import 'hammerjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'swipe-animation';
-  carouselItems: CarouselItem[] = [{
-    id: 1,
-    title: 'item 1',
-    description: 'desc item 1'
-  },
-  {
-    id: 1,
-    title: 'item 1',
-    description: 'desc item 1'
-  },
-  {
-    id: 1,
-    title: 'item 1',
-    description: 'desc item 1'
-  }];
+  carouselItems: CarouselItem[] = [];
+
+  ngOnInit(): void {
+    let i = 0;
+    while (i < 20) {
+      i++;
+      this.carouselItems.push({
+        id: i,
+        description: `Item ${i} description `,
+        title: `Iitem ${i} title `
+      });
+    }
+  }
 }
