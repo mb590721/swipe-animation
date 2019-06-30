@@ -1,3 +1,10 @@
-<div (pan)="pan($event)" class="flex-wrapper">
-  <app-carousel-item *ngFor="let item of items" [item]="item"></app-carousel-item>
+<div (pan)="pan($event)" (panstart)="panStart($event)" (panend)="panEnd($event)" #carousel  class="flex-wrapper"
+  [@ongoingPan]="{value: panX, params: {translate_X: panX}}"
+  [@endPan]="{value: panEnded, params: {translate_X: currentItemInitPanX}}">
+
+    <app-carousel-item 
+      *ngFor="let item of items" 
+      [item]="item"
+    >
+    </app-carousel-item>
 </div>
